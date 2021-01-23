@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        this.getSupportActionBar()?.hide()
 
         /*prosledjivanje recycle layouta ovaj context podataka*/
         recycleVaktija.layoutManager = LinearLayoutManager(this)
