@@ -49,11 +49,16 @@ class MainActivity : AppCompatActivity() {
 
         /*Pozivamo onaj haos dole.*/
         fetchJson()
+        fetchDogadjaj()
 
     }
 
+    private fun fetchDogadjaj() {
+        TODO("Not yet implemented")
+    }
+
     /*FUnkcija za pozivanje API-a koji je kreiran kao Json*/
-    private fun fetchJson() {
+    public fun fetchJson() {
         d("funkcija","Pozvali metodu za fetch linka")
 
         /*link sa API-jem*/
@@ -75,15 +80,14 @@ class MainActivity : AppCompatActivity() {
                 //generisemo niz u pomoc gson builder-a
                 val feed = gson.fromJson(body, Feed::class.java)
 
-                /*POGLEDAJ U LOGCAT ZASTO PUCA
-                val danasnjiDatum = feed.datum.get(0)
-                tvDanasnjiDatum.text = danasnjiDatum*/
-
                 /*obzirom da je pozadnski proces u pitanju moramo da pozivamo unutar
                 * ove metode.*/
                 runOnUiThread{
 
                     recycleVaktija.adapter = MainVaktija(feed)
+
+                    val danasnjiDatum = feed.datum.get(0)
+                    tvDanasnjiDatum.text = danasnjiDatum//.toString()
                 }
 
             }
@@ -96,3 +100,6 @@ class MainActivity : AppCompatActivity() {
 //Konstruktor klasa
 class Feed(val vakat: List<String>, val datum: List<String>)
 
+
+//json file za kalendar
+//https://pastebin.com/raw/kcf6XjLU
