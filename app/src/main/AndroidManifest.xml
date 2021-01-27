@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CalendarTesting">
-        <activity android:name=".pls"></activity>
+        <activity android:name=".SettingsActivity"></activity>
+        <activity android:name=".CalendarActivity" />
+        <activity android:name=".ExportActivity" />
+        <activity android:name=".OAplikaciji" />
+        <activity android:name=".pls" />
         <activity android:name=".MainProba" />
         <activity android:name=".MainActivity">
             <intent-filter>

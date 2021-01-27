@@ -1,5 +1,6 @@
 package com.example.calendartesting
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log.d
@@ -30,6 +31,23 @@ class MainActivity : AppCompatActivity() {
         /*Pozivamo onaj haos dole.*/
         fetchJson()
         fetchDogadjaj()
+
+        InfoButton.setOnClickListener(){
+            val intent = Intent(this, OAplikaciji::class.java)
+            startActivity(intent)
+        }
+        CalendarButton.setOnClickListener(){
+            val intent = Intent(this, CalendarActivity::class.java)
+            startActivity(intent)
+        }
+        ExportButton.setOnClickListener(){
+            val intent = Intent(this, ExportActivity::class.java)
+            startActivity(intent)
+        }
+        SettingsButton.setOnClickListener(){
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 
